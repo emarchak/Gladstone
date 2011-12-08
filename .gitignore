@@ -2,5 +2,8 @@
 settings*.php
 
 # Ignore paths that contain user-generated content.
+modules/contrib
+modules/contrib/*
+.DS_Store
 files
 private
