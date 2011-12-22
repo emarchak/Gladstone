@@ -7,3 +7,11 @@
  * remember to update the name in the info file
  * as well.
  */
+#columns {
+	background-color:transparent;
+}
+
+.sidebar .block,
+.sidebar-first .content-inner {
+	background-color: white;
+}
