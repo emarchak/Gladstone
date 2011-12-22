@@ -1,0 +1,7 @@
+name = Reswave
+description = Module to incorporate with PMS ResWave system with Drupal
+package = Custom
+core = 7.x
+files[] = reswave.admin.inc
+version = "7.x-1.0-beta"
+

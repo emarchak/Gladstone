@@ -1,0 +1,39 @@
+<?php
+
+
+/**
+ * @file
+ * Reservation form for the Reswave module.
+ */
+ 
+/**
+ * Implementation of hook_menu().
+ */
+function reswave_menu() {
+  $items['book'] = array(
+    'title' => 'Book a Room',
+    'description' => 'Book a room',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('reswave_form'),
+    'access arguments' => array('view published content'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * @file
+ * Book a room!
+ */
+ 
+function reswave_form() {
+	$form['book-a-room'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Name'),
+    '#maxlength' => 64,
+    '#description' => t('First Name'),
+    '#required' => TRUE,
+  );
+	return $form;
+}
