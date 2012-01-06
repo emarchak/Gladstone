@@ -28,12 +28,211 @@ function reswave_menu() {
  */
  
 function reswave_form() {
-	$form['book-a-room'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Name'),
-    '#maxlength' => 64,
-    '#description' => t('First Name'),
+	global $base_url, $base_path;
+
+	$form_state['method'] = 'post';
+	$form_state['action'] = url('https://www.reseze.net/servlet/WebresResDesk');
+
+/*hidden elements*/
+
+  $form['book-a-room']['hotelid'] = array(
+    '#type' => 'hidden',
+    '#value' => 4444,
+    '#name' => 'hotelid',
+  );
+  $form['book-a-room']['buildingCode'] = array(
+    '#type' => 'hidden',
+    '#value' => '444',
+    '#name' => 'buildingCode',
+  );
+   $form['book-a-room']['roomType'] = array(
+    '#type' => 'hidden',
+    '#value' => 'any',
+    '#name' => 'roomType',
+  );
+   $form['book-a-room']['returnurl'] = array(
+    '#type' => 'hidden',
+    '#value' => $base_url.$base_path.'book/no-vacancy',
+    '#name' => 'returnurl',
+  );
+  
+/*visible elements*/
+	$form['book-a-room']['guest_details'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Guest Information'),
+    '#group' => 'visibility',
+  );
+  $form['book-a-room']['guest_details']['firstName'] = array(
+  	'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('First Name')
+	);
+  
+  $form['book-a-room']['guest_details']['lastName'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Last Name')
+	);
+  $form['book-a-room']['guest_details']['address1'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Address')
+	);
+  $form['book-a-room']['guest_details']['city'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('City')
+	);
+  $form['book-a-room']['guest_details']['state'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Province/State')
+	);
+  $form['book-a-room']['guest_details']['country'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Country')
+	);
+  $form['book-a-room']['guest_details']['phoneArea'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Phone')
+	);
+  $form['book-a-room']['guest_details']['email'] = array(      
+		'#type' => 'textfield',
+  	'#size' => '',	
+		'#title' => t('Email')
+	);
+  
+  
+	/* Room Details */
+	$form['book-a-room']['room_details'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Room Details'),
+    '#group' => 'visibility',
+    '#weight' => 5,
+  );
+	$form['book-a-room']['room_details']['arrivalDay'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Arriving'),
     '#required' => TRUE,
   );
+  
+  $form['book-a-room']['room_details']['departDay'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Departing'),
+    '#required' => TRUE,
+  );  
+  
+	$form['book-a-room']['room_details']['adults'] = array(
+		'#type' => 'select',
+		'#options' => array(
+			'1' => '1',
+			'2' => '2',
+			'3' => '3',
+		),
+    '#title' => t('Adult Guests'),
+	);
+	
+	$form['book-a-room']['room_details']['children'] = array(
+		'#type' => 'select',
+		'#options' => array(
+			'1' => '1',
+			'2' => '2',
+			'3' => '3',
+		),
+    '#title' => t('Child Guests'),
+	);
+   
+  $rooms = array(
+			'1' => '<h2>Room Title</h2><p><a href="/">Learn More</a>',
+			'2' => '<h2>Room Title 2</h2><a href="/">Learn More</a>',
+			'3' => '<h2>Room Title 3</h2><a href="/">Learn More</a>',
+		);
+    
+	$form['book-a-room']['room_details']['roomNumber'] = array(
+		'#type' => 'radios',
+		'#required' => TRUE,
+    '#title' => t('Preferred Room'),
+    '#options' => $rooms,
+	);
+   
+   $form['book-a-room']['submit'] = array(
+    '#name' => 'book_a_room',
+    '#type' => 'submit',
+    '#value' => t('Book it!'),
+		'#weight' => 10,
+  );
 	return $form;
+}
+
+
+/**
+ * @file
+ * Book a room block!
+ */
+ 
+function reswave_block_form() {
+
+	global $base_url, $base_path;
+
+	$form_state['method'] = 'post';
+	$form_state['action'] = url('https://www.reseze.net/servlet/WebresResDesk');
+
+/*hidden elements*/
+
+  $form['book-a-room-block']['hotelid'] = array(
+    '#type' => 'hidden',
+    '#value' => 4444,
+    '#name' => 'hotelid',
+  );
+  $form['book-a-room-block']['buildingCode'] = array(
+    '#type' => 'hidden',
+    '#value' => '444',
+    '#name' => 'buildingCode',
+  );
+   $form['book-a-room-block']['roomType'] = array(
+    '#type' => 'hidden',
+    '#value' => 'any',
+    '#name' => 'roomType',
+  );
+   $form['book-a-room-block']['returnurl'] = array(
+    '#type' => 'hidden',
+    '#value' => $base_url.$base_path.'book/no-vacancy',
+    '#name' => 'returnurl',
+  );
+  
+  /*visible elements*/
+  
+    
+	$form['book-a-room-block']['room_details']['adults'] = array(
+		'#type' => 'select',
+		'#options' => array(
+			'1' => '1',
+			'2' => '2',
+			'3' => '3',
+		),
+    '#title' => t('Guests'),
+	);
+	
+  	$form['book-a-room-block']['room_details']['arrivalDay'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Arriving'),
+    '#required' => TRUE,
+  );
+  
+  $form['book-a-room-block']['room_details']['departDay'] = array(
+    '#type' => 'date_popup',
+    '#title' => t('Departing'),
+    '#required' => TRUE,
+  );
+  
+	$form['book-a-room-block']['submit'] = array(
+    '#name' => 'book_a_room',
+    '#type' => 'submit',
+    '#value' => t('Book it!'),
+		'#weight' => 10,
+  );
+	return $form;
+
 }
