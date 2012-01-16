@@ -34,7 +34,7 @@ function reswave_build_form() {
 	$arrival_date =  date( 'Y-m-d H:i:s', strtotime('today'));
 	$departure_date = date( 'Y-m-d H:i:s', strtotime('tomorrow'));
 	
-	$form['#method'] = 'post';
+	$form['#method'] = 'get';
 	$form['#validate'][] = 'reswave_build_form_validate';
 	//	$form['redirect'] = url('https://www.reseze.net/servlet/WebresResDesk');
 
