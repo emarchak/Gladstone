@@ -14,7 +14,7 @@ function reswave_menu() {
     'title' => 'Book a Room',
     'description' => 'Book a room',
     'page callback' => 'drupal_get_form',
-    'page arguments' => array('reswave_form'),
+    'page arguments' => array('reswave_build_form'),
     'access arguments' => array('access content'), 
     'type' => MENU_NORMAL_ITEM,
   );
@@ -27,11 +27,16 @@ function reswave_menu() {
  * Book a room!
  */
  
-function reswave_form() {
+function reswave_build_form() {
 	global $base_url, $base_path;
 
-	$form_state['method'] = 'post';
-	$form_state['action'] = url('https://www.reseze.net/servlet/WebresResDesk');
+	$date_format = 'D F j, Y';
+	$arrival_date =  date( 'Y-m-d H:i:s', strtotime('today'));
+	$departure_date = date( 'Y-m-d H:i:s', strtotime('tomorrow'));
+	
+	$form['#method'] = 'post';
+	$form['#validate'][] = 'reswave_build_form_validate';
+	//	$form['redirect'] = url('https://www.reseze.net/servlet/WebresResDesk');
 
 /*hidden elements*/
 
@@ -42,7 +47,7 @@ function reswave_form() {
   );
   $form['book-a-room']['buildingCode'] = array(
     '#type' => 'hidden',
-    '#value' => '444',
+    '#value' => 444,
     '#name' => 'buildingCode',
   );
    $form['book-a-room']['roomType'] = array(
@@ -50,11 +55,35 @@ function reswave_form() {
     '#value' => 'any',
     '#name' => 'roomType',
   );
+  
    $form['book-a-room']['returnurl'] = array(
     '#type' => 'hidden',
-    '#value' => $base_url.$base_path.'book/no-vacancy',
+    '#value' => $base_url.$base_path.'book',
     '#name' => 'returnurl',
   );
+  
+
+  $form['book-a-room']['room_details']['nightsStay'] = array(
+    '#type' => 'hidden',
+    '#name' => 'nightsStay',
+  );
+  $form['book-a-room']['room_details']['arrivalDay'] = array(
+    '#type' => 'hidden',
+    '#name' => 'arrivalDay',
+  ); 
+  $form['book-a-room']['room_details']['arrivalMonth'] = array(
+    '#type' => 'hidden',
+    '#name' => 'arrivalMonth',
+  );   
+  $form['book-a-room']['room_details']['arrivalYear'] = array(
+    '#type' => 'hidden',
+    '#name' => 'arrivalYear',
+  ); 
+  $form['book-a-room']['room_details']['numberRooms'] = array(
+    '#type' => 'hidden',
+    '#value' => 1,
+    '#name' => 'numberRooms',
+  );      
   
 /*visible elements*/
 	$form['book-a-room']['guest_details'] = array(
@@ -111,15 +140,20 @@ function reswave_form() {
     '#title' => t('Room Details'),
     '#group' => 'visibility',
     '#weight' => 5,
-  );
-	$form['book-a-room']['room_details']['arrivalDay'] = array(
+  )
+  ;
+	$form['book-a-room']['room_details']['arrivalDate'] = array(
     '#type' => 'date_popup',
+    '#date_format' => $date_format,
+    '#default_value' => $arrival_date, 
     '#title' => t('Arriving'),
     '#required' => TRUE,
   );
   
-  $form['book-a-room']['room_details']['departDay'] = array(
+  $form['book-a-room']['room_details']['departureDate'] = array(
     '#type' => 'date_popup',
+    '#date_format' => $date_format,
+    '#default_value' => $departure_date, 
     '#title' => t('Departing'),
     '#required' => TRUE,
   );  
@@ -155,6 +189,7 @@ function reswave_form() {
 		'#required' => TRUE,
     '#title' => t('Preferred Room'),
     '#options' => $rooms,
+    '#default_value' => '1', 
 	);
    
    $form['book-a-room']['submit'] = array(
@@ -167,19 +202,72 @@ function reswave_form() {
 }
 
 
+
 /**
  * @file
  * Book a room block!
  */
+
+function  reswave_build_form_validate($form, &$form_state){
+ // ... Validation Code
+	dsm($form);
+	$arrival_ts = strtotime($form['book-a-room']['room_details']['arrivalDate']['#value']['date']);
+	$departure_ts = strtotime($form['book-a-room']['room_details']['departureDate']['#value']['date']);
+	$today_ts = date();
+
+	$arrival = date('Y-m-d H:i:s', $arrival_ts);
+	$departure = date('Y-m-d H:i:s', $departure_ts);
+	$today = date('Y-m-d H:i:s');
+	
+	$arrival_date = new DateTime($arrival);
+	$departure_date = new DateTime($departure);
+	$current_date = new DateTime($today);
+	
+	$nights_interval = $departure_date->diff($arrival_date);
+	$nights_stay = intval($nights_interval->format('%d')); 
+
+	//check for time travel
+  if ($today_ts > $arrival_ts) {
+    form_set_error('book-a-room][room_details][arrivalDate', t('Your arrival day must be  either today or in the future. Unless you have a time machine'));
+  }
+  if ($departure_ts <= $arrival_ts) {
+  	 form_set_error('book-a-room][room_details][departureDate', t('Your departure must be after you arrive! No time travel.'));
+  }
+
+	//set hidden values
+
+	//form_set_value( array('#parents' => array('nightsStay')) , $nightsStay, $form_state);
+	form_set_value( array('#parents' => array('nightsStay')) , $nights_stay, $form_state);
+	form_set_value( array('#parents' => array('arrivalDay')) , intval(date('j', $arrival_ts)), $form_state);
+	form_set_value( array('#parents' => array('arrivalMonth')) , date('n', $arrival_ts)-1, $form_state);
+	form_set_value( array('#parents' => array('arrivalYear')) , intval(date('Y', $arrival_ts)), $form_state);
+
+	 drupal_set_message(t('Your form has been validated.'));
+}
+
+/**
+ * @file
+ * hook_submit
+ */
+function reswave_build_form_submit($form,&$form_state) {
+	print dsm($form_state);
+//	print dsm($form);
+  drupal_set_message(t('Your form has been saved.'));
+}
+
+/**
+ * @file
+ * Book a room block!
+ 
  
 function reswave_block_form() {
 
 	global $base_url, $base_path;
 
 	$form_state['method'] = 'post';
-	$form_state['action'] = url('https://www.reseze.net/servlet/WebresResDesk');
+	//$form_state['action'] = url('https://www.reseze.net/servlet/WebresResDesk');
 
-/*hidden elements*/
+/*hidden elements
 
   $form['book-a-room-block']['hotelid'] = array(
     '#type' => 'hidden',
@@ -202,7 +290,7 @@ function reswave_block_form() {
     '#name' => 'returnurl',
   );
   
-  /*visible elements*/
+  /*visible elements
   
     
 	$form['book-a-room-block']['room_details']['adults'] = array(
@@ -212,17 +300,20 @@ function reswave_block_form() {
 			'2' => '2',
 			'3' => '3',
 		),
+		'#default' => '1',
     '#title' => t('Guests'),
 	);
 	
-  	$form['book-a-room-block']['room_details']['arrivalDay'] = array(
+  $form['book-a-room-block']['room_details']['arrivalDay'] = array(
     '#type' => 'date_popup',
+    '#date_format' => 'D M j, Y',
     '#title' => t('Arriving'),
     '#required' => TRUE,
   );
   
   $form['book-a-room-block']['room_details']['departDay'] = array(
     '#type' => 'date_popup',
+    '#date_format' => 'D M j, Y',
     '#title' => t('Departing'),
     '#required' => TRUE,
   );
@@ -235,4 +326,22 @@ function reswave_block_form() {
   );
 	return $form;
 
+}
+
+function reswave_block_form_submit($form, &$form_state) {
+	dsm($form_state);
+  drupal_set_message(t('Your form has been saved.'.$vars));
+}
+*/
+
+function reswave_build_validate($form, &$form_state) {
+	$arrival = strtotime($form['book-a-room-block']['room_details']['arrivalDay']);
+	$departure = strtotime($form['book-a-room-block']['room_details']['departureDay']);
+	$today = strtotime('today');
+  if ($arrival && ($arrival < $today)) {
+    form_set_error('book-a-room-block][room_details][arrivalDay', t('Your arrival day must be  either today or in the future.'));
+  }
+  if ($departure && ($departure <= $arrival)) {
+  	    form_set_error('book-a-room-block][room_details][departureDay', t('Your departure must be after you arrive!'));
+  }
 }
