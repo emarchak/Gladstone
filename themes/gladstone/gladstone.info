@@ -22,10 +22,10 @@
 	; We only need to include two stylesheets - we must include colors.css
 	; and at least one more for our custom CSS.
 
- 
+	stylesheets[all][] = color/colors.css
 	stylesheets[all][] = css/gladstone.css
-
-
+ 	stylesheets[all][] = css/navigation.css
+ 	
 ;----------// Regions
 	; Copy and paste the region list from your base theme - these are the
 	; regions from Corolla.

@@ -21,7 +21,7 @@ function gladstone_preprocess_html(&$vars) {
 		'gladstone.responsive.style.css',
 		'gladstone.responsive.layout.css'
 	);
-	load_subtheme_media_queries($media_queries_css, 'gladstone'); // Replace 'gladstone' with your themes name
+	load_subtheme_media_queries($media_queries_css, 'gladstone'); 
 
  /**
 	* Load IE specific stylesheets
@@ -36,12 +36,10 @@ function gladstone_preprocess_html(&$vars) {
 	*
 	* Your IE CSS file must be in the /css/ directory in your subtheme.
 	*/
-	/* -- Delete this line to add a conditional stylesheet for IE 7 or less.
 	$ie_files = array(
 		'lte IE 7' => 'ie-lte-7.css',
 	);
-	load_subtheme_ie_styles($ie_files, 'gladstone'); // Replace 'gladstone' with your themes name
-	// */
+	load_subtheme_ie_styles($ie_files, 'gladstone'); 
 
 }
 

@@ -5,3 +5,7 @@
  * template.php for detials on how to
  * load this or additional IE stylesheets.
  */
+
+#block-system-main-menu li.first {
+	text-indent: 0;
+}

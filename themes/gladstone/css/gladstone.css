@@ -3,10 +3,21 @@
  *
  * Use this file to add your custom styles.
  *
- * You can change the name of this file, just
- * remember to update the name in the info file
- * as well.
  */
+
+html, body {
+	background-color:transparent;
+}
+ 
+html {
+	background: url('../images/bg-page.jpg') no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover; 
+ 	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.../images/bg-page.jpg', sizingMethod='scale');
+	-ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/bg-page.jpg', sizingMethod='scale')";
+}
 #columns {
 	background-color:transparent;
 }
@@ -30,9 +41,25 @@
 .sidebar .block,
 .sidebar .panel-pane,
 .sidebar-first .content-inner {
-	background-color: #fff;
+	background-color: #d7d0cc;
+		-moz-border-radius: 5px;
+		-webkit-border-radius: 5px;
+		-o-border-radius: 5px;
+		-khtml-border-radius: 5px; /* for old Konqueror browsers */
+	border-radius: 5px; /* future proofing */
 }
 
+
+.not-panel #content,
+.panel-col-main {
+		-moz-border-radius-topleft:0px;
+		-webkit-border-top-left-radius:0px;
+		-moz-border-radius-topright:0px;
+		-webkit-border-top-right-radius:0px;
+	border-top-right-radius:0px;
+	border-top-left-radius:0px;
+	
+}
 .sidebar-first .content-inner {
 	margin-left:0;
 }
@@ -55,4 +82,28 @@
 .fieldset-wrapper .form-item:first-child,
 .form-item {
 	margin: 20px;
+}
+
+
+body.bf-a, .bf-a .form-text, 
+.snf-a #site-name, 
+.ssf-a #site-slogan, 
+.ptf-a #page-title, 
+.ntf-a .article-title, 
+.ctf-a .comment-title, 
+.btf-a .block-title,
+#site-name, 
+#site-slogan,
+#page-title, 
+.article-title,
+.comment-title,
+.block-title,
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'League Gothic', sans-serif;
+	text-transform: uppercase;
+}
+
+.snf-a #site-name,
+h1#page-title {
+	font-size: 3em;
 }

@@ -45,10 +45,7 @@ a.active,
 li a.active {
 	color: #086782;
 }
-legend {
-	background-color: #086782;
-	color: #fff;
-}
+legend {}
 
 /* Link hovered */
 a:hover,
@@ -85,7 +82,7 @@ li a.active:focus {
 .region-header li	a:hover,
 .region-header li	a:active,
 .region-header li	a:focus {
-	background-color: #e25402;
+	background-color: #231f20;
 }
 .region-header .block-content > ul > li > a:hover,
 .region-header .block-content > ul > li > a:hover,
@@ -180,17 +177,9 @@ ul.vertical-tabs-list li a {
 
 /* Block title */
 .block h2,
-h2 {
-	color: #779125;
-}
-.block h2::selection {
-	color: #fff;
-	background-color: #779125;
-}
-.block h2::-moz-selection {
-	background-color: #779125;
-	color: #fff;
-}
+h2 {}
+.block h2::selection {}
+.block h2::-moz-selection {}
 
 /* Fieldset */
 fieldset {

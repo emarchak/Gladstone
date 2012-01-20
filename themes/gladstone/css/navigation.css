@@ -1,0 +1,466 @@
+/**
+ * gladstone navigation.css
+ *
+ * Menu and block styles
+ *
+ */
+
+/* CSS for major navigation elements such as menus, pager, superfish etc */
+a {
+	text-decoration: none;
+	-moz-transition: all 0.3s linear;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+a:link	{}
+a:visited {}
+a:hover 	{}
+a:active	{}
+a.active	{}
+
+/* Global focus style for links. */
+a:active,
+a:focus {}
+
+/* Menus */
+ul.menu {
+	margin: 0 0 0 15px;
+	padding: 0;
+}
+.ie6-7 ul.menu {
+	padding-left: 15px;
+}
+ul.menu li {
+	padding: 0;
+}
+ul.menu ul {
+	margin-left: 15px;
+}
+.region-top-menu {
+	height: 2.6em;
+	background: #fff;
+	margin-bottom: 10px;
+	-moz-border-radius: 0 0 2px 2px;
+	border-radius: 0 0 2px 2px;
+}
+.region-top-menu .block {
+	margin: 0;
+}
+.region-top-menu .block-inner {
+	margin: 0 10px;
+}
+.region-top-menu ul.menu {
+	margin: 0;
+	padding: 0;
+}
+.region-top-menu ul.menu li {
+	float: left;
+	list-style: none;
+	list-style-image: none;
+	padding: 0;
+	margin: 0;
+}
+.region-top-menu a {
+	height: 2.6em;
+	line-height: 2.6em;
+	padding: 0 10px;
+}
+
+/* AT7 builds brumbcrumb trails as an ordered list. */
+#breadcrumb ol {
+	margin: 0;
+	padding: 0;
+}
+#breadcrumb li {
+	list-style: none;
+	display: inline;
+}
+#breadcrumb {
+	font-size: 1.231em;
+	margin: 5px 20px;
+}
+#breadcrumb a,
+#breadcrumb a:visited {
+	display: inline-block;
+	font-size: 0.846em;
+	line-height: 28px;
+	margin: 0;
+}
+#breadcrumb li.crumb span {
+	margin: 0 .25em;
+}
+
+/* Pager */
+ul.pager {
+	clear: both;
+	margin: 0;
+	text-align: center;
+}
+.item-list ul.pager li {
+	margin: 0;
+}
+ul.pager li {
+	background-image: none;
+	display: inline;
+	list-style-type: none;
+	padding: .5em;
+}
+ul.pager li.pager-current {
+	font-weight: 700;
+}
+.block ul.pager li {
+	margin: 0;
+}
+
+/* Skip Navigation */
+#skip-link {
+	left: 50%;
+	margin-left: -6.5em;
+	margin-top: 0;
+	padding: 0 0.5em;
+	position: absolute;
+	width: 12em;
+	z-index: 50;
+}
+#skip-link a,
+#skip-link a:link,
+#skip-link a:visited {
+	background: #444;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	display: block;
+	line-height: 2;
+	padding: 0;
+	text-align: center;
+	text-decoration: none;
+	-khtml-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-top-left-radius: 0;
+	-webkit-border-top-right-radius: 0;
+	-webkit-border-bottom-left-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	border-radius: 0 0 10px 10px;
+}
+#skip-link a:hover,
+#skip-link a:active,
+#skip-link a:focus {
+	outline: 0;
+}
+
+/* tasks */
+div#tasks {
+	margin: 2em 0 1em 0;
+	padding: 0;
+}
+ul.tabs {
+	display: block;
+	padding: 0;
+	margin: 0;
+	border-bottom: 0;
+	border-bottom: solid 1px #e6e4e2;
+}
+ul.tabs li {
+	display: inline-block;
+	float: left;
+	margin: 0 0.2em 0 0;
+	padding: 0;
+}
+ul.tabs a {
+	display: block;
+	padding: 0 1em;
+	text-decoration: none;
+}
+ul.tabs a:hover,
+ul.tabs a:focus,
+ul.tabs a:active,
+.tabs a.active {
+	outline: 0;
+}
+ul.tabs a.active {
+	font-weight: 600;
+}
+
+/* Primary */
+ul.primary {
+	font-size: 1.077em;
+	height: 4ex;
+	line-height: 4ex;
+	margin-top: 1em;
+}
+ul.primary li a,
+ul.primary li.active a {
+	padding: 0 1em;
+	border: 0;
+}
+
+/* Secondary */
+ul.secondary {
+	background-color: #fff;
+	border-top: solid 1px #e6e4e2;
+	line-height: 4ex;
+	padding: 1em 1em 0 0;
+	position: relative;
+	margin: 0 0 1em 0;
+}
+.secondary a {
+	font-size: 0.923em;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+/* Action links */
+ul.action-links {
+	display: block;
+	margin: 1em 0;
+}
+.action-links li {
+	display: inline;
+	margin: 0 1em 0 0;
+}
+.action-links li a {
+	background: url(images/gray.png) no-repeat 0 -198px;
+	padding-left: 20px;
+}
+
+/* Disable transitions */
+ul.primary li a,
+ul.primary li.active a,
+div.contextual-links-wrapper a,
+.toolbar-toggle-processed {
+	-webkit-transition: 0;
+	-moz-transition: all 0s linear 0s;
+	-o-transition: 0;
+	transition: 0;
+}
+
+.menu-wrapper > ul > li {
+	position:relative;
+}
+
+/* creates a rectangle of the colour wanted for the pointy bit 
+.menu-wrapper > ul > li:before {
+	content:"";
+	position:absolute;
+	top:-25px;
+	left:50%;
+	height:20px;
+	margin:0 0 0 -7px;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid black;
+	border-top-right-radius:15px;
+}
+
+/* creates a rounded rectangle to cover part of the rectangle generated above	
+.menu-wrapper > ul > li:after {
+	content:"";
+	position:absolute;
+	top:-20px;
+	left:0;
+	width:50%;
+	height:20px;
+	background:#fff;
+	/* css3
+	-webkit-border-bottom-right-radius:15px;
+	-moz-border-radius-bottomright:15px;
+	border-bottom-right-radius:15px;
+}
+
+/* creates the other rounded rectangle 
+.menu-wrapper > ul > li > :first-child:before {
+	content:""; 
+	position:absolute; 
+	top:-20px; 
+	right:0; 
+	width:50%; 
+	height:20px; 
+	background:#fff;
+	/* css3 
+	-webkit-border-bottom-left-radius:15px;
+	-moz-border-radius-bottomleft:15px;
+	border-bottom-left-radius:15px;
+}
+*/
+
+
+/* Navigation */
+#menu-bar .sf-menu a {
+	border: 0;
+}
+
+/* Any menu block in the menu-bar region. */
+#menu-bar {
+	clear: both;
+	margin: 0;
+}
+
+#menu-bar ul.menu,
+#menu-bar .block,
+#menu-bar ul.menu li {
+	margin: 0;
+	padding: 0;
+}
+
+#menu-bar ul.menu {
+	margin: 0;
+	font-size: 1.231em;
+}
+#menu-bar ul.menu li {
+	display: inline;
+	float: left;
+	list-style: none;
+	margin-left: 0;
+	margin-right: 0.6em;
+}
+
+#menu-bar .block-menu ul.menu ul {
+	display: none;
+}
+
+
+#menu-bar ul a,
+#menu-bar ul a:visited {
+	background-color: #d7d0cc;
+	color: #231f20;
+	font-family: 'League Gothic', sans-serif;
+	text-transform: uppercase;
+	display: block;
+	line-height: 1.25em;
+	padding: .1em .5em 0;
+	white-space: nowrap;
+	font-size: 2.25em;
+	letter-spacing: .05em;
+}
+
+#menu-bar ul a:hover,
+#menu-bar ul a:focus,
+#menu-bar ul a:active,
+#menu-bar ul a.active-trail,
+#menu-bar ul a.active-trail:visited,
+#menu-bar ul a.active,
+#menu-bar ul a.active:visited {
+	background-color: #231f20;
+	color: #fff;
+}
+#menu-bar ul ul a:active,
+#menu-bar ul ul a.active-trail,
+#menu-bar ul ul a.active-trail:visited,
+#menu-bar ul ul a.active,
+#menu-bar ul ul a.active:visited {
+	background-color: #e1dfdc;
+	color: #4d453e;
+}
+#menu-bar ul ul a:hover,
+#menu-bar ul ul a:focus,
+#menu-bar ul ul a.active:hover,
+#menu-bar ul ul a.active:focus {
+	background-color: #473e34;
+	color: #fff;
+}
+#menu-bar .sf-navbar.sf-style-none li ul li ul {
+	background-color: transparent;
+}
+
+
+/* Secondary menu */
+#menu-bar .menu-level-2 {
+	background-color: #231f20;
+	color: #fff;
+	font-size: 1em;
+	padding-left:  1.5em
+}
+
+#menu-bar .menu-level-2 ul li {
+	margin-right: 1.5em;
+	letter-spacing: 0;
+}
+
+#menu-bar .menu-level-2 ul a,
+#menu-bar .menu-level-2 ul a:visited {
+	background-color: transparent;
+	color: #fff;
+	font-size: .9em;
+	font-family: sans-serif;
+	border-bottom:2px solid #231f20;
+	margin: .5em 0;
+	padding: .2em 0 0;
+}
+
+#menu-bar .menu-level-2 ul a:active,
+#menu-bar .menu-level-2 ul a.active-trail,
+#menu-bar .menu-level-2 ul a.active-trail:visited,
+#menu-bar .menu-level-2 ul a.active,
+#menu-bar .menu-level-2 ul a.active:hover,
+#menu-bar .menu-level-2 ul a.active:focus,
+#menu-bar .menu-level-2 ul a.active:visited {
+	background-color: transparent;
+	border-color: #231f20;
+	color: #ffdd18;
+}
+
+#menu-bar .menu-level-2 ul a:hover,
+#menu-bar .menu-level-2 ul a:focus {
+	border-color: #ffdd18;
+}
+
+/* HOME Button
+ * Inspired by http://nicolasgallagher.com/pure-css-gui-icons/demo/
+------------------------------------------------------------------------------------------------------------------------------- */
+
+#block-system-main-menu li.first {
+	display: list-item;
+	text-align: -webkit-match-parent;
+	text-indent: -900px;
+}
+
+#block-system-main-menu li.first::before, 
+#block-system-main-menu li.first::after, 
+#block-system-main-menu li.first a::before, 
+#block-system-main-menu li.first a::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	margin: -8px 0 0;
+	border-style: solid;
+	background: transparent;
+	border-color: transparent;
+	content: "";
+	top: 50%;
+	left:  50%;
+}
+
+/* the roof */
+#block-system-main-menu li.first a:before {
+	left: .13em;
+	border-style: solid;
+	border-width: .39em;
+	margin-top: -.8em;
+	border-bottom-color:#231f20;
+}
+
+/* the house */
+#block-system-main-menu li.first a:after {
+	left: .2em;
+	width: .15em;
+	height: .2em;
+	border-width: .3em .24em 0;
+	border-color: #231f20 #231f20 transparent;
+	margin-top: -.12em;
+}
+
+#block-system-main-menu li.first a:hover:before, 
+#block-system-main-menu li.first a:focus:before, 
+#block-system-main-menu li.first a:active:before,
+#block-system-main-menu li.first a.active:before {
+	border-bottom-color:#fff;
+	background:transparent;
+}
+
+#block-system-main-menu li.first a:hover:after, 
+#block-system-main-menu li.first a:focus:after, 
+#block-system-main-menu li.first a:active:after,
+#block-system-main-menu li.first a.active:after {
+	border-color:#fff #fff transparent;
+}
