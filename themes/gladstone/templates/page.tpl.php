@@ -4,6 +4,8 @@
 
 	<header class="clearfix" role="banner">
 
+		<?php print render($page['header_menu']); ?>
+
 		<div id="branding">
 			<?php if ($site_name || $site_slogan): ?>
 				<hgroup<?php if (!$site_slogan && $hide_site_name): ?> class="<?php print $visibility; ?>"<?php endif; ?>>

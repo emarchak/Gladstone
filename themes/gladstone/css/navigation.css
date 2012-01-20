@@ -284,7 +284,9 @@ div.contextual-links-wrapper a,
 */
 
 
-/* Navigation */
+/* 
+ * Navigation 
+------------------------------------------------------------------------------------------------------------------------------- */
 #menu-bar .sf-menu a {
 	border: 0;
 }
@@ -342,14 +344,8 @@ div.contextual-links-wrapper a,
 #menu-bar ul a.active:visited {
 	background-color: #231f20;
 	color: #fff;
-}
-#menu-bar ul ul a:active,
-#menu-bar ul ul a.active-trail,
-#menu-bar ul ul a.active-trail:visited,
-#menu-bar ul ul a.active,
-#menu-bar ul ul a.active:visited {
-	background-color: #e1dfdc;
-	color: #4d453e;
+	position: relative;
+	z-index: 400;
 }
 #menu-bar ul ul a:hover,
 #menu-bar ul ul a:focus,
@@ -357,18 +353,23 @@ div.contextual-links-wrapper a,
 #menu-bar ul ul a.active:focus {
 	background-color: #473e34;
 	color: #fff;
+	position: relative;
+	z-index: 400;
 }
 #menu-bar .sf-navbar.sf-style-none li ul li ul {
 	background-color: transparent;
 }
 
 
-/* Secondary menu */
+/*
+ * Secondary menu 
+------------------------------------------------------------------------------------------------------------------------------- */
 #menu-bar .menu-level-2 {
-	background-color: #231f20;
-	color: #fff;
+	background-color: #231F20;
+	color: white;
 	font-size: 1em;
-	padding-left:  1.5em
+	padding-left: 1.5em;
+	box-shadow: 0px -15px 20px rgba(0, 0, 0, .5);
 }
 
 #menu-bar .menu-level-2 ul li {
@@ -463,4 +464,72 @@ div.contextual-links-wrapper a,
 #block-system-main-menu li.first a:active:after,
 #block-system-main-menu li.first a.active:after {
 	border-color:#fff #fff transparent;
+}
+
+/*
+ * Header Menu
+------------------------------------------------------------------------------------------------------------------------------- */
+.region-header-menu {
+	position:absolute;
+	top:0;
+	background-color: rgba(35, 31, 32, .9);
+}
+
+.region-header-menu .block {
+	margin-bottom:0;
+	height:3em
+}
+
+.region-header-menu ul.menu {
+	color: white;
+	font-size: 1em;
+	display: inline;
+	padding-left: 1.5em;
+}
+
+.region-header-menu ul.menu li {
+	margin-right: 1.5em;
+	letter-spacing: 0;
+  list-style-type: none;
+  list-style-image: none;
+  display: inline;
+  padding: 0.2em 0.5em 0;
+}
+
+.region-header-menu ul.menu li:nth-last-child(2),
+.region-header-menu ul.menu li.last{
+	float:right;
+}
+
+
+.region-header-menu ul.menu a,
+.region-header-menu ul.menu span,
+.region-header-menu ul.menu a:visited {
+	text-transform: uppercase;
+	line-height: 3em;
+	white-space: nowrap;
+	letter-spacing: .05em;
+	background-color: transparent;
+	color: #8E9093;
+	font-size: .9em;
+	font-family: sans-serif;
+	margin: .5em 0;
+	padding: .2em 0 0;
+}
+
+.region-header-menu ul.menu a:active,
+.region-header-menu ul.menu a.active-trail,
+.region-header-menu ul.menu a.active-trail:visited,
+.region-header-menu ul.menu a.active,
+.region-header-menu ul.menu a.active:hover,
+.region-header-menu ul.menu a.active:focus,
+.region-header-menu ul.menu a.active:visited {
+	background-color: transparent;
+	color: #ffdd18;
+
+}
+
+.region-header-menu ul.menu a:hover,
+.region-header-menu ul.menu a:focus {
+	color: #fff;
 }

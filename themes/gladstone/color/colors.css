@@ -148,16 +148,6 @@ textarea:focus {
 .block-poll .poll .percent {
 	color: #fff;
 }
-
-/* Border (gray) */
-.region-header .sf-horizontal.sf-style-none li	a,
-.region-header ul.menu li a {
-	border-bottom: 3px double #e1e1e1;
-}
-.content-style {
-	border: 1px solid #e1e1e1;
-}
-
 /* Border strong (dark gray) */
 #sidebar-first input,
 #sidebar-second input {

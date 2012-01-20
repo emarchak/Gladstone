@@ -36,6 +36,7 @@
 	regions[content]					 = Main content
 	regions[content_aside]		 = Content cottom panel
 	regions[menu_bar]					= Menu Bar
+	regions[header_menu]			= Header Menu Bar
 	regions[header]						= Header panel
 	regions[three_33_first]		= Top panel first
 	regions[three_33_second]	 = Top panel second
