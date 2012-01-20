@@ -9,6 +9,10 @@
  */
 function content_everythang_ctools_plugin_api() {
   list($module, $api) = func_get_args();
+  if ($module == "field_group" && $api == "field_group") {
+    return array("version" => "1");
+  }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -57,6 +61,14 @@ function content_everythang_node_info() {
       'description' => t('A specific room in the Gladstone Hotel.'),
       'has_title' => '1',
       'title_label' => t('Room Name'),
+      'help' => '',
+    ),
+    'landing_page' => array(
+      'name' => t('Landing Page'),
+      'base' => 'node_content',
+      'description' => t('A custom layout for landing pages.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
       'help' => '',
     ),
     'page' => array(
