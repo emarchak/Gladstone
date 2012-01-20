@@ -6,4 +6,5 @@ modules/contrib
 modules/contrib/*
 .DS_Store
 files
+files/*
 private
