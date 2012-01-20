@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Content: Everythang feature.
+ */
+
+include_once('content_everythang.features.inc');
