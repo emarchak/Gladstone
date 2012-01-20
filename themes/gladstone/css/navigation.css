@@ -413,6 +413,7 @@ div.contextual-links-wrapper a,
 	display: list-item;
 	text-align: -webkit-match-parent;
 	text-indent: -900px;
+	width: 3em;
 }
 
 #block-system-main-menu li.first::before, 
@@ -434,7 +435,7 @@ div.contextual-links-wrapper a,
 
 /* the roof */
 #block-system-main-menu li.first a:before {
-	left: .13em;
+	left: .33em;
 	border-style: solid;
 	border-width: .39em;
 	margin-top: -.8em;
@@ -443,7 +444,7 @@ div.contextual-links-wrapper a,
 
 /* the house */
 #block-system-main-menu li.first a:after {
-	left: .2em;
+	left: .4em;
 	width: .15em;
 	height: .2em;
 	border-width: .3em .24em 0;
@@ -519,11 +520,9 @@ div.contextual-links-wrapper a,
 
 .region-header-menu ul.menu a:active,
 .region-header-menu ul.menu a.active-trail,
-.region-header-menu ul.menu a.active-trail:visited,
 .region-header-menu ul.menu a.active,
 .region-header-menu ul.menu a.active:hover,
-.region-header-menu ul.menu a.active:focus,
-.region-header-menu ul.menu a.active:visited {
+.region-header-menu ul.menu a.active:focus{
 	background-color: transparent;
 	color: #ffdd18;
 
