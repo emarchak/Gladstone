@@ -117,8 +117,17 @@ h1#page-title {
 }
 
 hr {
-border: 0px dotted white;
-height: 1px;
-border-top-width: 2px;
-margin: 0 -20px;
+	border: 0px dotted white;
+	height: 1px;
+	border-top-width: 2px;
+	margin: 0 -20px;
+}
 
+
+.panel-pane.pane-taxonomy-slideshow {
+	margin:0px
+}
+
+.panel-pane.pane-taxonomy-slideshow .views-slideshow-pager-field-item {
+	float:left
+}

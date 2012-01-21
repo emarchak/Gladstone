@@ -429,7 +429,10 @@ div.contextual-links-wrapper a,
 ------------------------------------------------------------------------------------------------------------------------------- */
 
 .panel-pane .contextual-links-wrapper {
-	display:none;
+	display: none;
+	position: absolute;
+	background-color: white;
+	padding: .25em .5em;
 }
 
 .panel-pane:hover .contextual-links-wrapper {
