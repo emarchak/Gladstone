@@ -40,7 +40,8 @@ html {
 .panel-col-main,
 .sidebar .block,
 .sidebar .panel-pane,
-.sidebar-first .content-inner {
+.maintenance-page #main-content,
+.region-sidebar-first .content-inner {
 	background-color: #d7d0cc;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
@@ -49,6 +50,7 @@ html {
 	border-radius: 5px; /* future proofing */
 }
 
+.sidebar-first .content-inner
 .panel-page .region-content,
 .not-panel #content,
 .panel-col-main {
@@ -72,6 +74,10 @@ html {
 	margin-top: 0;
 }
 
+form {
+	height: 100%;
+	overflow: auto;
+}
 
 .fieldset-wrapper .form-item:first-child,
 .container-inline-date,
