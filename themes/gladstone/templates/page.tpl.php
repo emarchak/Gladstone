@@ -33,10 +33,6 @@
 		<?php print render($page['help']); ?>
 		<?php print render($page['secondary_content']); ?>
 
-		<?php if ($breadcrumb): ?>
-			<section id="breadcrumb"><?php print $breadcrumb; ?></section>
-		<?php endif; ?>
-
 		<div id="content-column">
 
 			<?php print render($page['highlighted']); ?>

@@ -49,7 +49,7 @@ html {
 	border-radius: 5px; /* future proofing */
 }
 
-
+.panel-page .region-content,
 .not-panel #content,
 .panel-col-main {
 		-moz-border-radius-topleft:0px;
