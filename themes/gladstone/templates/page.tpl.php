@@ -48,9 +48,9 @@
 							<?php if ($title):?>
 								<h1 id="page-title"<?php print $title_classes; ?>><?php print $title.$is_panel; ?></h1>
 							<?php endif; ?>
-							<?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>
+							<?php if (($primary_local_tasks || $secondary_local_tasks || $action_links) && !$is_panel): ?>
 								<div id="tasks" class="clearfix">
-									<?php if ($primary_local_tasks): ?>
+									<?php if ($primary_local_tasks ): ?>
 										<ul class="tabs primary clearfix"><?php print render($primary_local_tasks); ?></ul>
 									<?php endif; ?>
 									<?php if ($secondary_local_tasks): ?>
