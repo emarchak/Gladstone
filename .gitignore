@@ -8,3 +8,4 @@ modules/contrib/*
 files
 files/*
 private
+error_log
