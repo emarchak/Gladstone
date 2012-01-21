@@ -49,8 +49,8 @@
 					<?php print render($title_prefix); ?>
 					<?php if ($title || $primary_local_tasks || $secondary_local_tasks || $action_links = render($action_links)): ?>
 						<header class="clearfix">
-							<?php if ($title): ?>
-								<h1 id="page-title"<?php print $title_classes; ?>><?php print $title; ?></h1>
+							<?php if ($title):?>
+								<h1 id="page-title"<?php print $title_classes; ?>><?php print $title.$is_panel; ?></h1>
 							<?php endif; ?>
 							<?php if ($primary_local_tasks || $secondary_local_tasks || $action_links): ?>
 								<div id="tasks" class="clearfix">
