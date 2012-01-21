@@ -90,7 +90,9 @@ form {
 	margin: 20px;
 }
 
-
+/*
+ *Typography
+ ------------------------------------------------------------------------------------------------------------------------------- */
 body.bf-a, .bf-a .form-text, 
 .snf-a #site-name, 
 .ssf-a #site-slogan, 
@@ -114,4 +116,9 @@ h1#page-title {
 	font-size: 3em;
 }
 
+hr {
+border: 0px dotted white;
+height: 1px;
+border-top-width: 2px;
+margin: 0 -20px;
 
