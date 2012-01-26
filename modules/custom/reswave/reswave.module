@@ -42,17 +42,17 @@ function reswave_build_form() {
 
   $form['book-a-room']['hotelid'] = array(
     '#type' => 'hidden',
-    '#value' => 4444,
+    '#value' => '1299',
     '#name' => 'hotelid',
   );
   $form['book-a-room']['buildingCode'] = array(
     '#type' => 'hidden',
-    '#value' => 444,
+    '#value' => 'Any',
     '#name' => 'buildingCode',
   );
    $form['book-a-room']['roomType'] = array(
     '#type' => 'hidden',
-    '#value' => 'any',
+    '#value' => 'Any',
     '#name' => 'roomType',
   );
   
