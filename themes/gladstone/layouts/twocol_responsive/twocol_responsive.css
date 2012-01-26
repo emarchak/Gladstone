@@ -6,3 +6,9 @@
 .content-inner {
 	float:left;
 }
+
+.panel-col-main .panel-pane, 
+.panel-col-main .block {
+	margin-bottom:0;
+	padding: 0 20px;
+}

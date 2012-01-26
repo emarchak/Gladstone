@@ -101,6 +101,9 @@
 	#block-system-main-menu li.first a:after {
 		display:none;
 	}
+	#block-system-main-menu li.first {
+		width: auto;
+	}
 
 }
 /* Smartphone landscape */
@@ -202,6 +205,9 @@
 	#block-system-main-menu li.first a:before,
 	#block-system-main-menu li.first a:after {
 		display:none;
+	}
+	#block-system-main-menu li.first {
+		width: auto;
 	}
 }
 /* Tablet portrait */
@@ -307,6 +313,9 @@
 	#block-system-main-menu li.first a:after {
 		display:none;
 	}
+	#block-system-main-menu li.first {
+		width: auto;
+	}
 }
 /* Tablet landscape */
 @media only screen and (min-width:769px) and (max-width:1024px) {
@@ -339,6 +348,10 @@
 	#block-system-main-menu li.first a:after {
 		display:none;
 	}
+	#block-system-main-menu li.first {
+		width: auto;
+	}
+}
 	
 }
 /* Standard layout */

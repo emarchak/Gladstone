@@ -52,8 +52,8 @@ function gladstone_process_page(&$vars) {
 	$page_classes[] = 'container';
 	
 	$page_manager = page_manager_get_current_page();
-	
-	$vars['is_panel'] = (is_array($page_manager)) ? TRUE : FALSE; 
+
+	$vars['is_panel'] = (isset($page_manager['name'])) ? TRUE : FALSE; 
 	
 	if ($vars['is_panel']) {
 		$title_classes[] = "element-invisible";

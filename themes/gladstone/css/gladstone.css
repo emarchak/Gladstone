@@ -91,6 +91,46 @@ form {
 }
 
 /*
+ * Blocks
+ ------------------------------------------------------------------------------------------------------------------------------- */
+
+#main-content .pane-page-tabs, 
+.pane-page-tabs ul {
+	border-bottom-width:0px;
+	background-color:transparent;
+}
+
+.pane-page-tabs a,
+.pane-page-tabs a:visited {
+  background: #e6e4e2 url(/sites/all/themes/sky/css/images/ui/ui-bg_highlight-soft_90_e6e4e2_1x100.png) 50% 50% repeat-x;
+  border: 1px solid #e6e4e2;
+    border-width:1px;
+  border-bottom-color: #bbb;
+  border-right-color: #bbb;
+  color: #000;
+  font-size: 1em;
+  font-weight: 500;
+  padding: 0.5em 1em;
+  margin: 0 0.5em 0 0;
+  overflow: hidden;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+
+.pane-page-tabs a:hover,
+.pane-page-tabs a:focus,
+.pane-page-tabs a:active {
+  background: #d6d4d1 url(/sites/all/themes/sky/css/images/ui/ui-bg_highlight-soft_50_d6d4d1_1x100.png) 50% 50% repeat-x;
+  border: 1px solid #e1dedb;
+  border-width:1px;
+  border-bottom-color: #aaa;
+  border-right-color: #aaa;
+  color: #000;
+  cursor: pointer;
+}
+
+/*
  *Typography
  ------------------------------------------------------------------------------------------------------------------------------- */
 body.bf-a, .bf-a .form-text, 

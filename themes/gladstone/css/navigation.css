@@ -326,7 +326,9 @@ div.contextual-links-wrapper a,
 
 
 #menu-bar ul a,
-#menu-bar ul a:visited {
+#menu-bar ul a:visited,
+.menu-block-2 a, 
+.menu-block-2 a:visited {
 	background-color: #d7d0cc;
 	color: #231f20;
 	font-family: 'League Gothic', sans-serif;
@@ -335,8 +337,9 @@ div.contextual-links-wrapper a,
 	line-height: 1.25em;
 	padding: .1em .5em 0;
 	white-space: nowrap;
-	font-size: 2.25em;
+	font-size: 2.22em;
 	letter-spacing: .05em;
+	box-shadow: 0px -10px 10px rgba(0, 0, 0, .25) inset;
 }
 
 #menu-bar ul a:hover,
@@ -350,6 +353,7 @@ div.contextual-links-wrapper a,
 	color: #fff;
 	position: relative;
 	z-index: 400;
+	box-shadow: 0px -5px 10px rgba(0, 0, 0, .25);
 }
 #menu-bar ul ul a:hover,
 #menu-bar ul ul a:focus,
@@ -376,11 +380,10 @@ div.contextual-links-wrapper a,
 	color: white;
 	font-size: 1em;
 	padding-left: 1.5em;
-	box-shadow: 0px -15px 20px rgba(0, 0, 0, .5);
 }
 
 #menu-bar .menu-level-2 ul li,
-.menu-block-2 ul li {
+.pane-menu-block-2 ul.menu li	 {
 	margin-right: 1.5em;
 	letter-spacing: 0;
 }
@@ -396,6 +399,7 @@ div.contextual-links-wrapper a,
 	border-bottom:2px solid #231f20;
 	margin: .5em 0;
 	padding: .2em 0 0;
+	box-shadow: 0px 0;
 }
 
 #menu-bar .menu-level-2 ul a:active,
@@ -442,6 +446,11 @@ div.contextual-links-wrapper a,
 .pane-menu-block-2 {
 	margin-bottom: 0;
 	padding: 0;
+}
+
+.menu-block-2 {
+	box-shadow: 0px 0px;
+	margin: 0 -20px;
 }
 
 /* HOME Button
