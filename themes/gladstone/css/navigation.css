@@ -298,7 +298,7 @@ div.contextual-links-wrapper a,
 }
 
 #menu-bar ul.menu,
-.pane-menu-block-2,
+.menu-block-wrapper,
 #menu-bar .block,
 #menu-bar ul.menu li {
 	margin: 0 0 0 0;
@@ -306,13 +306,13 @@ div.contextual-links-wrapper a,
 }
 
 #menu-bar ul.menu,
-.pane-menu-block-2 ul.menu {
+.menu-block-wrapperul.menu {
 	margin: 0;
 	font-size: 1.231em;
 }
 
 #menu-bar ul.menu li,
-.pane-menu-block-2 ul.menu li {
+.menu-block-wrapper ul.menu li {
 	display: inline;
 	float: left;
 	list-style: none;
@@ -327,8 +327,8 @@ div.contextual-links-wrapper a,
 
 #menu-bar ul a,
 #menu-bar ul a:visited,
-.menu-block-2 a, 
-.menu-block-2 a:visited {
+.menu-block-wrapper  a, 
+.menu-block-wrapper  a:visited {
 	background-color: #d7d0cc;
 	color: #231f20;
 	font-family: 'League Gothic', sans-serif;
@@ -375,7 +375,7 @@ div.contextual-links-wrapper a,
 
 
 #menu-bar .menu-level-2,
-.menu-block-2 {
+.menu-block-wrapper  {
 	background-color: #231F20;
 	color: white;
 	font-size: 1em;
@@ -390,8 +390,8 @@ div.contextual-links-wrapper a,
 
 #menu-bar .menu-level-2 ul a,
 #menu-bar .menu-level-2 ul a:visited,
-.menu-block-2 ul a,
-.menu-block-2 ul a:visited {
+.menu-block-wrapper  ul a,
+.menu-block-wrapper  ul a:visited {
 	background-color: transparent;
 	color: #fff;
 	font-size: .9em;
@@ -409,13 +409,13 @@ div.contextual-links-wrapper a,
 #menu-bar .menu-level-2 ul a.active:hover,
 #menu-bar .menu-level-2 ul a.active:focus,
 #menu-bar .menu-level-2 ul a.active:visited,
-.menu-block-2 ul a:active,
-.menu-block-2 ul a.active-trail,
-.menu-block-2 ul a.active-trail:visited,
-.menu-block-2 ul a.active,
-.menu-block-2 ul a.active:hover,
-.menu-block-2 ul a.active:focus,
-.menu-block-2 ul a.active:visited {
+.menu-block-wrapper  ul a:active,
+.menu-block-wrapper  ul a.active-trail,
+.menu-block-wrapper  ul a.active-trail:visited,
+.menu-block-wrapper  ul a.active,
+.menu-block-wrapper  ul a.active:hover,
+.menu-block-wrapper  ul a.active:focus,
+.menu-block-wrapper  ul a.active:visited {
 	background-color: transparent;
 	border-color: #231f20;
 	color: #ffdd18;
@@ -423,8 +423,8 @@ div.contextual-links-wrapper a,
 
 #menu-bar .menu-level-2 ul a:hover,
 #menu-bar .menu-level-2 ul a:focus,
-.menu-block-2 ul a:hover,
-.menu-block-2 ul a:focus {
+.menu-block-wrapper  ul a:hover,
+.menu-block-wrapper  ul a:focus {
 	border-color: #ffdd18;
 }
 
@@ -448,7 +448,7 @@ div.contextual-links-wrapper a,
 	padding: 0;
 }
 
-.menu-block-2 {
+.menu-block-wrapper  {
 	box-shadow: 0px 0px;
 	margin: 0 -20px;
 }

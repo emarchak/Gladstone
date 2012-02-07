@@ -165,9 +165,15 @@ hr {
 
 
 .panel-pane.pane-taxonomy-slideshow {
-	margin:0px
+	margin:0px;
+	padding: 0px;
 }
 
 .panel-pane.pane-taxonomy-slideshow .views-slideshow-pager-field-item {
-	float:left
+	float:left;
+	margin-right: 14px;
+}
+
+.panel-pane.pane-taxonomy-slideshow .views-slideshow-pager-field-item:first-child {
+	margin-left: 14px;
 }
