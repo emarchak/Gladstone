@@ -1,6 +1,8 @@
 # Ignore configuration files that may contain sensitive information.
 settings*.php
 
+*.sql
+
 # Ignore paths that contain user-generated content.
 modules/contrib
 modules/contrib/*
