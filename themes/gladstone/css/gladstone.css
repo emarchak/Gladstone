@@ -48,6 +48,7 @@ html {
 		-o-border-radius: 5px;
 		-khtml-border-radius: 5px; /* for old Konqueror browsers */
 	border-radius: 5px; /* future proofing */
+	overflow: auto;
 }
 
 .sidebar-first .content-inner
@@ -176,4 +177,39 @@ hr {
 
 .panel-pane.pane-taxonomy-slideshow .views-slideshow-pager-field-item:first-child {
 	margin-left: 14px;
+}
+
+/*
+ *Nodes
+ ------------------------------------------------------------------------------------------------------------------------------- */
+ 
+article.article-teaser.article-hotel-room {
+	float:left;
+	width: 22%;
+	margin-right:4%;
+} 
+
+article.article-teaser.article-hotel-room:nth-child(5n) {
+	margin-right:0px;
+}
+
+article.article-teaser.article-hotel-room header {
+	border-bottom-width:0px;
+}
+
+article.article-teaser.article-hotel-room header a {
+	display:block;
+	background-color:#000;
+	background-color: rgba(35, 31, 32, .9);
+	font-size:0.75em;
+	padding-left:0.5em;
+	margin-bottom:-2em;
+	line-height:1.5em;
+	color:#fff;
+	border-bottom:0px
+}
+
+article.article-teaser.article-hotel-room:hover header a {
+	color: #000;
+	background-color: #FFDD18;
 }
