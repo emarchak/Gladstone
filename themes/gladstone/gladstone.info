@@ -23,6 +23,7 @@
 	; and at least one more for our custom CSS.
 
 	stylesheets[all][] = color/colors.css
+	stylesheets[all][] = css/fields.css
 	stylesheets[all][] = css/gladstone.css
  	stylesheets[all][] = css/navigation.css
  	
