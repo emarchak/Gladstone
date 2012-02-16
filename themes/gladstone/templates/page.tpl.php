@@ -83,17 +83,9 @@
 
 	</div>
 
-	<?php if ($page['footer'] || $page['four_first'] || $page['four_second'] || $page['four_third'] || $page['four_fourth']): ?>
+	<?php if ($page['footer'] ): ?>
 		<footer role="contentinfo">
-			<?php if ($page['four_first'] || $page['four_second'] || $page['four_third'] || $page['four_fourth']): ?>
-				<div class="four-4x25 gpanel clearfix">
-					<?php print render($page['four_first']); ?>
-					<?php print render($page['four_second']); ?>
-					<?php print render($page['four_third']); ?>
-					<?php print render($page['four_fourth']); ?>
-				</div>
-			<?php endif; ?>
-			<?php if ($page['footer']): print render($page['footer']); endif; ?>
+		<?php if ($page['footer']): print render($page['footer']); endif; ?>
 		</footer>
 	<?php endif; ?>
 

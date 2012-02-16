@@ -44,10 +44,6 @@
 	regions[three_33_third]		= Top panel third
 	regions[secondary_content] = Features panel
 	regions[tertiary_content]	= Bottom panel
-	regions[four_first]				= Footer panel first
-	regions[four_second]			 = Footer panel second
-	regions[four_third]				= Footer panel third
-	regions[four_fourth]			 = Footer panel fourth
 	regions[footer]						= Footer
 	regions[help]							= Help
 	regions[page_top]					= Page top
