@@ -7,8 +7,7 @@ settings*.php
 modules/contrib
 modules/contrib/*
 files
-files/wordpress/*
-files/rooms/*
+files/*
 .DS_Store
 private
 error_log
