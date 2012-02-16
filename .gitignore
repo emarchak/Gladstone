@@ -6,7 +6,7 @@ settings*.php
 # Ignore paths that contain user-generated content.
 modules/contrib
 modules/contrib/*
-files/*
+files
 files/wordpress/*
 files/rooms/*
 .DS_Store
