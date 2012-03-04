@@ -3,6 +3,9 @@
  *
  * Use this file to add your custom styles.
  *
+ colors:
+ light grey #624f52
+ 
  */
 
 html, body {
@@ -41,15 +44,28 @@ html {
 .sidebar .block,
 .sidebar .panel-pane,
 .maintenance-page #main-content,
-.region-sidebar-first .content-inner {
+.region-sidebar-first .content-inner,
+.article-type-sidebar .block {
 	background-color: #d7d0cc;
 		-moz-border-radius: 5px;
 		-webkit-border-radius: 5px;
 		-o-border-radius: 5px;
 		-khtml-border-radius: 5px; /* for old Konqueror browsers */
 	border-radius: 5px; /* future proofing */
-	overflow: auto;
 }
+
+.sidebar .panel-pane.pane-node-field-sidebar,
+.sidebar .panel-pane.pane-node {
+	background-color: transparent;
+	padding: 0;
+	margin-bottom:0;
+}
+
+.sidebar .article-type-sidebar .block {
+	padding: 20px;
+	margin-bottom:20px;
+}
+
 
 .sidebar-first .content-inner
 .panel-page .region-content,
@@ -131,6 +147,13 @@ form {
   cursor: pointer;
 }
 
+
+
+.pane-featured {
+	float:left;
+	width:50%;
+}
+
 /*
  *Typography
  ------------------------------------------------------------------------------------------------------------------------------- */
@@ -147,9 +170,17 @@ body.bf-a, .bf-a .form-text,
 .article-title,
 .comment-title,
 .block-title,
-h1 {
+h1, h2 {
 	font-family: 'League Gothic', sans-serif;
 	text-transform: uppercase;
+}
+
+
+h1 a:link,
+h1 a:visited,
+h2 a:link,
+h2 a:visited {
+	color:#624f52;
 }
 
 h3, h4, h5, h6 {}

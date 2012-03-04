@@ -36,6 +36,7 @@
 .sidebar-first .region-sidebar-first {width: 28%; margin-left: -28%; margin-top: -9em;}
 .container, .region.region-header-menu {width: 100%;}
 #menu-bar {margin-right: 30%;}
+.pane-featured {float: left; width: 44%;}
 .region.region-header-menu {display:none;}
 }
 /* Standard layout three-col-right */
@@ -45,8 +46,9 @@
 .sidebar-second .content-inner {margin-right: 30%; margin-left: 0;}
 .region-sidebar-first {width: 30%; margin-left: -60%;}
 .region-sidebar-second {width: 30%; margin-left: -30%; clear: none;}
-.sidebar-first .region-sidebar-first {width: 28%; margin-left: -28%; margin-top: -9em;}
+.sidebar-first .region-sidebar-first {width: 28%; margin-left: -28%; margin-top: -3.7em;}
 .container, .region.region-header-menu {width: 100%; max-width: 960px;}
 #menu-bar {margin-right: 30%;}
 #branding {margin: 40px 0;}
+.pane-featured {float: left; width: 44%;}
 }
