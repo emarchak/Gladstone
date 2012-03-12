@@ -24,8 +24,9 @@
 
 	stylesheets[all][] = color/colors.css
 	stylesheets[all][] = css/fields.css
-	stylesheets[all][] = css/gladstone.css
  	stylesheets[all][] = css/navigation.css
+	stylesheets[all][] = css/gladstone.css
+	stylesheets[all][] = css/front.css
  	
 ;----------// Regions
 	; Copy and paste the region list from your base theme - these are the
